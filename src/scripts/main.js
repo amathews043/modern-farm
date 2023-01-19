@@ -14,7 +14,7 @@ import { addPlant } from "./field.js"
 import { usePlants } from "./field.js"
 import { plantSeeds } from "./tractor.js"
 import { harvestPlants } from "./harvester.js"
-// import { useHarvest } from "./harvester.js"
+import { catalog } from "./catalog.js"
 
 // const asparagusSeed = createAsparagus()
 
@@ -30,11 +30,15 @@ import { harvestPlants } from "./harvester.js"
 // const plantingPotato = addPlant(potatoSeed)
 // const usingPotato = usePlants(plantingPotato)
 
-const planting = plantSeeds(yearlyPlan)
+plantSeeds(yearlyPlan)
 // console.log(usePlants())
 
 const harvesting = harvestPlants(usePlants())
 console.log(harvesting)
+
+const parentHTMLElement = document.querySelector(".container");
+
+parentHTMLElement.innerHTML = catalog(harvesting) 
 
 
 
